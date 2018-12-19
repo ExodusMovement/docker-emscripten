@@ -11,6 +11,8 @@ RUN apt-get update \
   && source /root/emsdk/emsdk_env.sh --build=Release  \
   && emcc -v
 
+WORKDIR /app
+
 COPY ./entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
