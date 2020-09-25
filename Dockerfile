@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-ARG VERSION=1.38.21
+ARG VERSION=2.0.4
 
 SHELL ["/bin/bash", "-c"]
 
