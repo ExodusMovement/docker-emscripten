@@ -1,5 +1,7 @@
 FROM ubuntu:xenial
 
+ARG VERSION=1.38.21
+
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update \
@@ -7,8 +9,8 @@ RUN apt-get update \
   && pip3 install requests
   && git clone --single-branch --branch master --depth 1 https://github.com/juj/emsdk.git /root/emsdk \
   && cd /root \ 
-	&& /root/emsdk/emsdk install latest \
-	&& /root/emsdk/emsdk activate latest \
+	&& /root/emsdk/emsdk install ${VERSION} \
+	&& /root/emsdk/emsdk activate ${VERSION} \
   && source /root/emsdk/emsdk_env.sh --build=Release  \
   && emcc -v
 
