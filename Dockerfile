@@ -5,8 +5,7 @@ ARG VERSION=1.38.48
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update \
-  && apt-get install -y git python3 python3-pip cmake build-essential openjdk-9-jre-headless \
-  && pip3 install requests \
+  && apt-get install -y git python cmake build-essential openjdk-9-jre-headless \
   && git clone --single-branch --branch master --depth 1 https://github.com/juj/emsdk.git /root/emsdk \
   && cd /root \ 
 	&& /root/emsdk/emsdk install ${VERSION} \
